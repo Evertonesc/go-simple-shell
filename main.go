@@ -18,9 +18,14 @@ func main() {
 		fmt.Fprintln(os.Stderr, err)
 	}
 
+	dir, err := os.Getwd()
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+	}
+
 	reader := bufio.NewReader(os.Stdin)
 	for {
-		fmt.Printf("%s >", user.Name)
+		fmt.Printf("%s on %s>", user.Name, dir)
 
 		input, err := reader.ReadString('\n')
 		if err != nil {
