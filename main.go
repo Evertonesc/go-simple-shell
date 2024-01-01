@@ -27,14 +27,14 @@ func main() {
 			fmt.Fprintln(os.Stderr, err)
 		}
 
-		err = execInput(input)
+		err = runInput(input)
 		if err != nil {
 			fmt.Fprintln(os.Stderr, err)
 		}
 	}
 }
 
-func execInput(input string) error {
+func runInput(input string) error {
 	input = strings.TrimSuffix(input, "\n")
 
 	args := strings.Split(input, " ")
